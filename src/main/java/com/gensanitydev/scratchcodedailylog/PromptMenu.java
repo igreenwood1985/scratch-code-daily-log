@@ -30,7 +30,7 @@ public class PromptMenu {
         System.out.println("");
         System.out.println("1) Coding Exercise 1 - 5/26/2025");
         System.out.println("");
-        System.out.println("2) Coding Exercise 2 - Uninitiated");
+        System.out.println("2) Coding Exercise 2 - 5/28/2025");
         System.out.println("");
 
     }

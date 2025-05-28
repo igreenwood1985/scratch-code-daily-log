@@ -1,5 +1,7 @@
 package com.gensanitydev.scratchcodedailylog;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 public class CodingExercises {
 
@@ -47,8 +49,109 @@ public class CodingExercises {
     public void exerciseTwo(){
 
         //Write your code within the exerciseTwo() method below this line
-        System.out.println("You have chosen Exercise 2, which is not yet in progress");
+        System.out.println("You have chosen Exercise 2, started on May 28th, 2025");
         System.out.println(" ");
+
+        Scanner input = new Scanner(System.in);
+        String selectAction = "Y";
+
+        System.out.print("Please enter the number of students you are grading: ");
+        String arrayInput = input.nextLine();
+
+        int numberOfStudents = Integer.parseInt(arrayInput);
+
+        int[] testScores = new int[numberOfStudents];
+
+        for(int i = 0; i <= testScores.length - 1; i++) {
+
+            int studentIDNum = i + 1;
+            System.out.print("Enter score of student " + studentIDNum + ": ");
+            String scoreEntry = input.nextLine();
+            testScores[i] = Integer.parseInt(scoreEntry);
+        }
+
+
+
+        while (selectAction.equalsIgnoreCase("Y")){
+            System.out.println("What information do you need?");
+            System.out.println(" ");
+            System.out.println("1 - Show class size");
+            System.out.println(" ");
+            System.out.println("2 - Show all Scores");
+            System.out.println(" ");
+            System.out.println("3 - Show average score");
+            System.out.println(" ");
+            System.out.println("4 - Show highest score");
+            System.out.println(" ");
+            System.out.println("5 - Show lowest score");
+            System.out.println(" ");
+            if(numberOfStudents >= 10){
+                System.out.println("6 - Show modal score");
+                System.out.println(" ");
+
+            }
+
+            System.out.print("Please select corresponding number: ");
+            System.out.println(" ");
+
+            String choiceAction = input.nextLine();
+
+            int choiceNumber = Integer.parseInt(choiceAction);
+
+            if(choiceNumber == 1){
+                System.out.println("This is the number of students in your class");
+                System.out.println(" ");
+                System.out.println(numberOfStudents);
+
+            }
+            else if (choiceNumber == 2){
+                System.out.println("Here are all of you test scores");
+                System.out.println(" ");
+                System.out.println(Arrays.toString(testScores));
+
+            }
+            else if (choiceNumber == 3){
+
+                int sum = Arrays.stream(testScores).sum();
+                int averageScore = sum/numberOfStudents;
+
+                System.out.println("The average testScore for this class is: " + averageScore);
+                System.out.println(" ");
+
+            } else if (choiceNumber == 4) {
+
+                System.out.println("The highest score in this class is: "
+                        + Arrays.stream(testScores).max().getAsInt());
+                System.out.println(" ");
+
+            } else if (choiceNumber == 5) {
+
+                System.out.println("The lowest score in this class is: "
+                        + Arrays.stream(testScores).min().getAsInt());
+                System.out.println(" ");
+
+            } else if (choiceNumber == 6){
+
+                HashMap<Integer, Integer> countMap = new HashMap<>();
+                int mode = testScores[0];
+                int maxCount = 0;
+
+                for (int num : testScores) {
+                    int count = countMap.getOrDefault(num, 0) + 1;
+                    countMap.put(num, count);
+
+                    if (count > maxCount) {
+                        maxCount = count;
+                        mode = num;
+                    }
+                }
+
+                System.out.println("Test score mode for this class is: " + mode);
+            }
+
+            System.out.print("Would you like more information about this class's test scores? " );
+            selectAction = input.nextLine();
+        }
 
     }
 
