@@ -153,6 +153,14 @@ public class CodingExercises {
             selectAction = input.nextLine();
         }
 
+
+
+    }
+
+    public void exerciseThree(){
+
+        System.out.println(" ");
+        System.out.println("This exercise has not yet been coded");
     }
 
 }

@@ -40,6 +40,11 @@ public class Main {
 
                 // Exercise 2;
                 selectedExercise.exerciseTwo();
+            }
+            else if (choiceCommand.equals("3")){
+
+                // Exercise 2;
+                selectedExercise.exerciseThree();
             } else {
 
                 // Prompts user to select a different option
