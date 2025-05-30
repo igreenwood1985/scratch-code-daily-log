@@ -28,11 +28,14 @@ public class PromptMenu {
     public void showExercises(){
         System.out.println("Please choose the exercise you want to test run: ");
         System.out.println("");
-        System.out.println("1) Coding Exercise 1 - 5/26/2025");
+        System.out.println("1) Coding Exercise 1: Vote Eligibility");
+        System.out.println("   - 5/26/2025");
         System.out.println("");
-        System.out.println("2) Coding Exercise 2 - 5/28/2025");
+        System.out.println("2) Coding Exercise 2: Classroom Grades");
+        System.out.println("   - 5/28/2025");
         System.out.println("");
-        System.out.println("3) Coding Exercise 3 - Not yet initiated");
+        System.out.println("3) Coding Exercise 3: Reading/Writing/Appending Files");
+        System.out.println("   - 5/30/2025");
         System.out.println("");
 
     }
