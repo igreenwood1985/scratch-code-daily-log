@@ -160,10 +160,30 @@ public class CodingExercises {
     public void exerciseThree(){
 
         System.out.println(" ");
-        System.out.println("This exercise has not yet been coded");
+        System.out.println("This exercise uses a file reader and a file writer");
+        System.out.println("to produce/read/update a file");
+
+        final String BEGIN_MARKER = "*** START OF";
+        final String END_MARKER = "*** END OF";
+
+            /*
+             * This book-reader program opens a file that was downloaded from https://www.gutenberg.org/, reads
+             * through the copyright information at the top until it finds the start of the book content, and
+             * then displays the content to the user. It also counts the total lines of book content between the
+             * start and the end markers.
+             */
+
+        /*
+        Step 1: Prompt the user for a filename
+         */
+            // Create a scanner for user input
+            Scanner userInput = new Scanner(System.in);
+            // Prompt the user for a file path - path should look like "data/jekyll-and-hyde.txt"
+            System.out.print("Enter path to the book file: ");
+            String filePath = userInput.nextLine();
+
 
 
 
     }
-
 }
