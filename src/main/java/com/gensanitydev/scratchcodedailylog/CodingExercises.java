@@ -190,23 +190,38 @@ public class CodingExercises {
 
             File bookFile = new File(filePath);
 
+            boolean inBookText = false;
 
             try(Scanner fileInput = new Scanner(bookFile)){
                 // Loop until end of file is reached
 
                 int lineCount = 0;
 
-                while(fileInput.hasNextLine()) {
+                while(fileInput.hasNextLine()){
 
                     // Read the next line into lineOfText
                     String lineOfText = fileInput.nextLine();
 
-                    // Increment lineCount
-                    lineCount++;
+                    // Skip header information before file content
+                    if( lineOfText.startsWith(BEGIN_MARKER)) {
+                        inBookText = true;
+                        continue; // no need to process this line... go to next line
+                    }
 
-                    //Print the line
-                    System.out.println(lineCount + ": " + lineOfText);
+                    if(lineOfText.startsWith(END_MARKER)){
+                        break; //Break out of loop once program finds end
+                    }
 
+                    // Only prints lines of text when inBookText = true
+                    if(inBookText) {
+                        // Increment lineCount
+                        lineCount++;
+
+
+                        //Print the line
+                        System.out.println( lineCount + ": " + lineOfText);
+
+                    }
                 }
 
 
