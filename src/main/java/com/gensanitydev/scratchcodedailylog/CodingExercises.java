@@ -1,5 +1,7 @@
 package com.gensanitydev.scratchcodedailylog;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -181,6 +183,16 @@ public class CodingExercises {
             // Prompt the user for a file path - path should look like "data/jekyll-and-hyde.txt"
             System.out.print("Enter path to the book file: ");
             String filePath = userInput.nextLine();
+
+            File bookFile = new File(filePath);
+
+            try(Scanner fileInput = new Scanner(bookFile)){
+                // Loop until end of file is reached
+
+            }catch (FileNotFoundException e){
+                // Could not find the file at the specified path.
+                System.out.println("File not found " + bookFile.getAbsolutePath());
+            }
 
 
 
