@@ -184,12 +184,33 @@ public class CodingExercises {
             System.out.print("Enter path to the book file: ");
             String filePath = userInput.nextLine();
 
+        /*
+        Step 2: Step Two: Open the book file and handle errors
+         */
+
             File bookFile = new File(filePath);
+
 
             try(Scanner fileInput = new Scanner(bookFile)){
                 // Loop until end of file is reached
 
-            }catch (FileNotFoundException e){
+                int lineCount = 0;
+
+                while(fileInput.hasNextLine()) {
+
+                    // Read the next line into lineOfText
+                    String lineOfText = fileInput.nextLine();
+
+                    // Increment lineCount
+                    lineCount++;
+
+                    //Print the line
+                    System.out.println(lineCount + ": " + lineOfText);
+
+                }
+
+
+            } catch (FileNotFoundException e){
                 // Could not find the file at the specified path.
                 System.out.println("File not found " + bookFile.getAbsolutePath());
             }
