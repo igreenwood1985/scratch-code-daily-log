@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.io.PrintWriter;
+
 public class CodingExercises {
 
     // This class contains all coding exercises that are hard-coded into the program,
@@ -162,37 +164,35 @@ public class CodingExercises {
     public void exerciseThree(){
 
         System.out.println(" ");
-        System.out.println("This exercise uses a file reader and a file writer");
-        System.out.println("to produce/read/update a file");
+        System.out.println("This exercise uses a file reader");
+        System.out.println("to skip redacted lines while showing");
+        System.out.println("lines that are public information");
 
-        final String BEGIN_MARKER = "*** START OF";
-        final String END_MARKER = "*** END OF";
+        final String PUBLIC_MARKER = "*** Public";
+        final String REDACTED_MARKER = "*** Top Secret";
+        final String END_MARKER = "*** End";
 
-            /*
-             * This book-reader program opens a file that was downloaded from https://www.gutenberg.org/, reads
-             * through the copyright information at the top until it finds the start of the book content, and
-             * then displays the content to the user. It also counts the total lines of book content between the
-             * start and the end markers.
-             */
+
 
         /*
-        Step 1: Prompt the user for a filename
+        Prompt the user for a filename
          */
             // Create a scanner for user input
             Scanner userInput = new Scanner(System.in);
+
             // Prompt the user for a file path - path should look like "data/jekyll-and-hyde.txt"
-            System.out.print("Enter path to the book file: ");
+            System.out.print("Enter path to the reading file: ");
             String filePath = userInput.nextLine();
 
         /*
-        Step 2: Step Two: Open the book file and handle errors
+        Open the file to be read and handle errors
          */
 
-            File bookFile = new File(filePath);
+            File foiaFile = new File(filePath);
 
-            boolean inBookText = false;
+            boolean viewableText = false;
 
-            try(Scanner fileInput = new Scanner(bookFile)){
+            try(Scanner fileInput = new Scanner(foiaFile)){
                 // Loop until end of file is reached
 
                 int lineCount = 0;
@@ -203,17 +203,25 @@ public class CodingExercises {
                     String lineOfText = fileInput.nextLine();
 
                     // Skip header information before file content
-                    if( lineOfText.startsWith(BEGIN_MARKER)) {
-                        inBookText = true;
+                    if( lineOfText.startsWith(PUBLIC_MARKER)) {
+                        viewableText = true;
                         continue; // no need to process this line... go to next line
                     }
 
-                    if(lineOfText.startsWith(END_MARKER)){
-                        break; //Break out of loop once program finds end
+                    if(lineOfText.startsWith(REDACTED_MARKER)){
+                        viewableText = false; //Redact lineOfText
+
+                        //Increment lineCount
+                        lineCount++;
+                        System.out.println( lineCount + ": Redacted");
+                    }
+
+                    if(lineOfText.startsWith(END_MARKER)) {
+                        break; // Ends program at the end of the document
                     }
 
                     // Only prints lines of text when inBookText = true
-                    if(inBookText) {
+                    if(viewableText) {
                         // Increment lineCount
                         lineCount++;
 
@@ -227,7 +235,7 @@ public class CodingExercises {
 
             } catch (FileNotFoundException e){
                 // Could not find the file at the specified path.
-                System.out.println("File not found " + bookFile.getAbsolutePath());
+                System.out.println("File not found " + foiaFile.getAbsolutePath());
             }
 
 

@@ -66,7 +66,7 @@ public class Main {
 
         }
         System.out.println(" ");
-        System.out.println("Study hard and keep trying!");
+        System.out.println("Study hard and keep trying! Code daily!");
 
 
     }

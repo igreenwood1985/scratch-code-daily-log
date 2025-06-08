@@ -1,0 +1,24 @@
+*** Public ***
+
+Header information is visible for testing but will be redacted as program
+completion progresses.
+
+*** Top Secret ***
+
+This information is hidden from public view for testing purposes
+
+*** Public ***
+
+This information should be visible to the user when the program runs
+
+*** Top Secret ***
+
+This information is hidden from public view for testing purposes
+
+
+*** Public ***
+
+If the program doesn't show this line, the writer is a rotten egg!
+
+
+*** END ***
