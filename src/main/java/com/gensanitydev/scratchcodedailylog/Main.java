@@ -43,8 +43,13 @@ public class Main {
             }
             else if (choiceCommand.equals("3")){
 
-                // Exercise 2;
+                // Exercise 3;
                 selectedExercise.exerciseThree();
+            }
+            else if (choiceCommand.equals("4")){
+
+                // Exercise 4;
+                selectedExercise.exerciseFour();
             } else {
 
                 // Prompts user to select a different option

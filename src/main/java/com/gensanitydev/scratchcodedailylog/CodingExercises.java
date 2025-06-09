@@ -242,4 +242,11 @@ public class CodingExercises {
 
 
     }
+
+
+    public void exerciseFour(){
+        System.out.println("This is an exercise in which file I/O writer is used ");
+        System.out.println("to create a file that can then be appended with new ");
+        System.out.println("entries by the user. ");
+    }
 }

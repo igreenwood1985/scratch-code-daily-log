@@ -37,6 +37,8 @@ public class PromptMenu {
         System.out.println("3) Coding Exercise 3: Reading/Redacting Files");
         System.out.println("   - 5/30/2025");
         System.out.println("");
+        System.out.println("4) Coding Exercise 4: Writing/Appending Files");
+        System.out.println("   - 6/09/2025");
 
     }
 
