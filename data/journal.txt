@@ -1,0 +1,6 @@
+*** Public ***
+      
+This is the humble beginning of my new word processor file. 
+I hope that from here, I can work towards building great things.
+perhaps in the future, I will have the ability to simply hit ENTER for the next line. 
+asking for permission line by line is kind of clunky after all!

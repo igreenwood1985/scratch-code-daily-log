@@ -5,7 +5,9 @@ import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.io.IOException;
 
 public class CodingExercises {
 
@@ -248,5 +250,36 @@ public class CodingExercises {
         System.out.println("This is an exercise in which file I/O writer is used ");
         System.out.println("to create a file that can then be appended with new ");
         System.out.println("entries by the user. ");
+
+        String continueInput = " ";
+        boolean addLine = true;
+        Scanner userInput = new Scanner(System.in);
+        String filePath = "data/journal.txt";
+
+        while(addLine) {
+            //Write code below this line
+
+
+            System.out.print("Type a line to append to journal.txt: ");
+            String lineToWrite = userInput.nextLine();
+
+            try (PrintWriter writer = new PrintWriter(new FileWriter(filePath, true))) {
+                writer.println(lineToWrite);
+                System.out.println("\"" + lineToWrite + "\"" + " successfully added to file.");
+            } catch (IOException e) {
+                System.out.println("an error occurred: " + e.getMessage());
+            }
+
+            System.out.print("Would you like to add another line to the document? Y/N: ");
+            continueInput = userInput.nextLine();
+
+            if (continueInput.equalsIgnoreCase("Y")){
+                addLine = true;
+            } else {
+                addLine = false;
+            }
+
+        }
+
     }
 }
