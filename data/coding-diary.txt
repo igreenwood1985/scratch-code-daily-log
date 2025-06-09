@@ -1,0 +1,24 @@
+*** Public ***
+
+Once upon a blue moon, a decidedly amateur coder decided to create a faux word processor.
+His method was a little crude, and he thinks he consults with the AI a little too much.
+However, he kept trying.
+
+Hopefully someone will hire him someday.
+/exit
+*** Public ***
+The next day, he made another entry into his diary. He had to test his theory of redaction.
+On the third day, he plans to write a redacted line text to test his work further.
+
+/exit
+*** Top Secret ***
+This text should be redacted. It should not be viewable by the reader program when the user tests the file.
+These lines should be skipped for the next public line.
+
+/exit
+*** Public ***
+On day four, the humble and clueless developer made a public entry to his coding diary. he still doesn't 
+really know what the hell he is doing, but maybe he is starting to get an undertanding of some 
+infinitesimal part of all of this madness!
+
+/exit

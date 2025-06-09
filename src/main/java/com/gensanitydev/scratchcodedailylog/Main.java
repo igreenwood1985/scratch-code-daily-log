@@ -50,8 +50,12 @@ public class Main {
 
                 // Exercise 4;
                 selectedExercise.exerciseFour();
-            } else {
+            }
+            else if (choiceCommand.equals("5")){
 
+                // Exercise 5;
+                selectedExercise.exerciseFive();
+            } else {
                 // Prompts user to select a different option
                 messagePrompt.unavailableNotice();
             }

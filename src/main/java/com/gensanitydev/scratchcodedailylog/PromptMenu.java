@@ -40,6 +40,9 @@ public class PromptMenu {
         System.out.println("4) Coding Exercise 4: Writing/Appending Files");
         System.out.println("   - 6/09/2025");
         System.out.println("");
+        System.out.println("5) Coding Exercise 5: Refined File Writer Program");
+        System.out.println("   - 6/09/2025");
+        System.out.println("");
 
     }
 

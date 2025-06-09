@@ -282,4 +282,55 @@ public class CodingExercises {
         }
 
     }
+
+    public void exerciseFive() {
+        System.out.println("This is a refined file writer program. It allows the user");
+        System.out.println("to move on to the next file by simply pressing ENTER. When");
+        System.out.println("the user types /exit into the command line,");
+        System.out.println("the program exits.");
+        System.out.println(" ");
+        System.out.println(" ");
+
+
+        //Declarations and Variables
+        String continueInput = " ";
+        boolean addLine = true;
+        String filePath = "data/coding-diary.txt";
+
+        Scanner userInput = new Scanner(System.in);
+
+
+        //User Instructions
+        System.out.println("Please enter the text you wish to add to the diary.");
+        System.out.println(" ");
+        System.out.println("To finish your current line and move to the next line,.");
+        System.out.println("press ENTER.");
+        System.out.println(" ");
+        System.out.println("To finish your entry, type /exit.");
+        System.out.println(" ");
+        System.out.println("For publicly viewable information, start the first line");
+        System.out.println("with *** Public ***");
+        System.out.println(" ");
+        System.out.println("To write a redacted line in the diary, start the first line");
+        System.out.println("with *** Top Secret *** ");
+        System.out.println(" ");
+        System.out.println("Enter the your text:");
+
+        while(addLine){
+
+            String lineToWrite = userInput.nextLine();
+
+            if(lineToWrite.equalsIgnoreCase("/EXIT")){
+                addLine = false;
+            } else {
+                addLine = true;
+            }
+
+            try(PrintWriter writer = new PrintWriter(new FileWriter(filePath, true))){
+                writer.println(lineToWrite);
+            } catch (IOException e) {
+                System.out.println("an error occurred: " + e.getMessage());
+            }
+        }
+    }
 }
