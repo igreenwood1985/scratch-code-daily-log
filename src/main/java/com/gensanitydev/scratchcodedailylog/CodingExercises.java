@@ -335,7 +335,10 @@ public class CodingExercises {
     }
 
     public void exerciseSix(){
-        System.out.println("This is exercise five. Considering a grade logging program");
-        System.out.println("which utilizes what has been learned so far");
+        System.out.println("In this exercise, you will write a program using what you have ");
+        System.out.println("previously learned to write a grade book program that keeps a log");
+        System.out.println("of student grades and records time and date of entries.");
+
+        //Write code below this line
     }
 }
