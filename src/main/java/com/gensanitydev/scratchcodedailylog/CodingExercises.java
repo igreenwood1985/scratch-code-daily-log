@@ -333,4 +333,9 @@ public class CodingExercises {
             }
         }
     }
+
+    public void exerciseSix(){
+        System.out.println("This is exercise five. Considering a grade logging program");
+        System.out.println("which utilizes what has been learned so far");
+    }
 }

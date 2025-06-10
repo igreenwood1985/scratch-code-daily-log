@@ -55,6 +55,11 @@ public class Main {
 
                 // Exercise 5;
                 selectedExercise.exerciseFive();
+            }
+            else if (choiceCommand.equals("6")){
+
+                // Exercise 6;
+                selectedExercise.exerciseSix();
             } else {
                 // Prompts user to select a different option
                 messagePrompt.unavailableNotice();

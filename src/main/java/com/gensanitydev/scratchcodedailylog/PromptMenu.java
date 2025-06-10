@@ -43,6 +43,9 @@ public class PromptMenu {
         System.out.println("5) Coding Exercise 5: Refined File Writer Program");
         System.out.println("   - 6/09/2025");
         System.out.println("");
+        System.out.println("6) Grade Book Log Program");
+        System.out.println("   - 6/10/2025");
+        System.out.println("");
 
     }
 
