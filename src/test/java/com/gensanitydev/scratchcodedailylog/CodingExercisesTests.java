@@ -235,6 +235,25 @@ public class CodingExercisesTests {
         assertTrue(content.contains("Today I practiced coding and wrote test cases."));
         assertFalse(content.contains("/exit")); // should not be written
     }
+
+    @Test
+    public void testExerciseSix_containsStudentGradesInfo() throws IOException {
+
+        // Prepare a temporary file to simulate gradebook
+        File tempFile = File.createTempFile("testgradebook", ".txt");
+        tempFile.deleteOnExit();
+        String filePath = tempFile.getAbsolutePath();
+
+        // Simulated user input: 3 lines, then "/exit"
+        String simulatedInput = String.join("\n",
+                "*** Public ***",
+                "Today I practiced coding and wrote test cases.",
+                "/exit"
+        ) + "\n";
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        outputStream.reset();
+
+    }
 }
 
 
